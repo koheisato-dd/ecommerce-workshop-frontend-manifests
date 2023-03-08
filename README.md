@@ -1,1 +1,1 @@
-# ecommerce-workshop-manifests
+# ecommerce-workshop-frontend-manifests
