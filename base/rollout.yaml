@@ -4,7 +4,6 @@ metadata:
   labels:
     tags.datadoghq.com/service: store-frontend
     tags.datadoghq.com/env: "development"
-    tags.datadoghq.com/version: "1.0"
     app: ecommerce
   name: frontend
 spec:
@@ -13,21 +12,20 @@ spec:
     matchLabels:
       tags.datadoghq.com/service: store-frontend
       tags.datadoghq.com/env: "development"
-      tags.datadoghq.com/version: "1.0"
       app: ecommerce
   strategy:
     canary:
       maxSurge: 1
       maxUnavailable: 1
       steps:
-        - setWeight: 25
-        - pause: {}  
+      - setWeight: 25
+      - pause: {}  
   template:
     metadata:
       labels:
         tags.datadoghq.com/service: store-frontend
         tags.datadoghq.com/env: "development"
-        tags.datadoghq.com/version: "1.0"
+        tags.datadoghq.com/version: VERSION
         app: ecommerce
       annotations:
         ad.datadoghq.com/frontend.logs: '[{"source": "ruby", "service": "store-frontend"}]'
@@ -79,7 +77,7 @@ spec:
           #   value: <your_client_token>
           # - name: DD_APPLICATION_ID
           #   value: <your_application_id>
-        image: "shocnt/store-frontend-instrumented-fixed:latest"
+        image: IMAGE
         imagePullPolicy: IfNotPresent
         name: frontend
         ports:

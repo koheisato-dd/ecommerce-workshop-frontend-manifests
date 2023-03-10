@@ -4,7 +4,6 @@ metadata:
   labels:
     tags.datadoghq.com/service: store-frontend
     tags.datadoghq.com/env: development
-    tags.datadoghq.com/version: "1.0"
     app: ecommerce
   name: frontend
 spec:
@@ -16,6 +15,5 @@ spec:
   selector:
     tags.datadoghq.com/service: store-frontend
     tags.datadoghq.com/env: development
-    tags.datadoghq.com/version: "1.0"
     app: ecommerce
   type: ClusterIP

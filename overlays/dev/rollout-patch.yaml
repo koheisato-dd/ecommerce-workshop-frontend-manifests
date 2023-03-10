@@ -2,10 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: frontend
-#spec:
-#  replicas: 1
-#  template:
-#    spec:
-#      containers:
-#      - name: 
-#        image: shocnt/store-frontend-instrumented-fixed:latest
+spec:
+  template:
+    metadata:
+      labels:
+        tags.datadoghq.com/version: "1.0"
+    spec:
+      containers:
+      - image: "shocnt/store-frontend-instrumented-fixed:latest"
+        name: frontend
