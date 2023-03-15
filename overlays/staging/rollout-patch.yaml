@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  labels:
+    tags.datadoghq.com/env: staging
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      tags.datadoghq.com/env: staging
+  template:
+    metadata:
+      labels:
+        tags.datadoghq.com/env: staging
+        tags.datadoghq.com/version: "1.0"
+    spec:
+      containers:
+      - image: shocnt/store-frontend-instrumented-fixed:latest
+        name: frontend

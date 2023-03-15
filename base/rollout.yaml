@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   labels:
     tags.datadoghq.com/service: store-frontend
-    tags.datadoghq.com/env: "development"
+    tags.datadoghq.com/env: ENV
     app: ecommerce
   name: frontend
 spec:
@@ -11,20 +11,19 @@ spec:
   selector:
     matchLabels:
       tags.datadoghq.com/service: store-frontend
-      tags.datadoghq.com/env: "development"
+      tags.datadoghq.com/env: ENV
       app: ecommerce
   strategy:
     canary:
       maxSurge: 1
       maxUnavailable: 1
       steps:
-      - setWeight: 25
-      - pause: {}  
+      - setWeight: 100
   template:
     metadata:
       labels:
         tags.datadoghq.com/service: store-frontend
-        tags.datadoghq.com/env: "development"
+        tags.datadoghq.com/env: ENV
         tags.datadoghq.com/version: VERSION
         app: ecommerce
       annotations:
