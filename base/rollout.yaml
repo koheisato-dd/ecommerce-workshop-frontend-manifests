@@ -71,6 +71,8 @@ spec:
             value: "http://advertisements"
           - name: ADS_PORT
             value: "5002"
+          - name: PORT
+            value: "8080"
           # Enable RUM
           # - name: DD_CLIENT_TOKEN
           #   value: <your_client_token>
@@ -80,7 +82,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: frontend
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
           protocol: TCP
         resources:
           requests:
