@@ -61,6 +61,8 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.labels['tags.datadoghq.com/version']
+          - name: DD_SITE
+            value: "datadoghq.com"
           - name: DD_ANALYTICS_ENABLED
             value: "true"
           - name: DISCOUNTS_ROUTE
@@ -73,11 +75,6 @@ spec:
             value: "5002"
           - name: PORT
             value: "8080"
-          # Enable RUM
-          # - name: DD_CLIENT_TOKEN
-          #   value: <your_client_token>
-          # - name: DD_APPLICATION_ID
-          #   value: <your_application_id>
         image: IMAGE
         imagePullPolicy: IfNotPresent
         name: frontend
