@@ -16,4 +16,4 @@ spec:
     tags.datadoghq.com/service: store-frontend
     tags.datadoghq.com/env: ENV
     app: ecommerce
-  type: ClusterIP
+  type: NodePort
